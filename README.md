@@ -17,7 +17,7 @@ src
 ├── css
 ├── fonts
 ├── html
-├── images
+├── media
 ├── js
 └── app.js
 
