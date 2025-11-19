@@ -33,3 +33,11 @@ Jeg viser **brukerstøtte** ved å lage en enkel og brukervennlig løsning med p
 | Port | Brukes av                     |
 |------|-------------------------------|
 | 3000 | NodeJS til å hoste prosjektet |
+| ???? | Mariadb |
+
+#### Brukere / tjenester / Passord
+| Tjeneste                 | IP-adresse     | Hostname       | Brukernavn | Passord        |
+|--------------------------|----------------|----------------|------------|----------------|
+| Rpi / Ubuntu / Home srv  | ?????????????  | ubuntu-server  |    Root    | BadosBados123! |
+| MariaDB                  | ?????????????  | mariadb-server |    Root    | BadosBados123! |
+
