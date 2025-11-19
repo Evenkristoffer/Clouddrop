@@ -27,4 +27,9 @@ I denne oppgaven viser jeg **drift** ved å sette opp server, database og filhå
 Jeg viser **utvikling** ved å bygge API-endepunkter, skrive kode og lage et fungerende grensesnitt/app.  
 Jeg viser **brukerstøtte** ved å lage en enkel og brukervennlig løsning med popup-warnings/feilmeldinger og dokumentasjon som forklarer problemer og nødvendige detaljer, som for eksempel passord til database.
 
+### Dokumentasjon
 
+#### Porter
+| Port | Brukes av                     |
+|------|-------------------------------|
+| 3000 | NodeJS til å hoste prosjektet |
