@@ -37,12 +37,20 @@ npm install
 node app.js
 ```
 
-API-et vil feile hvis det ikke får kontakt med MongoDB; sjekk at databasen kjører og at `MONGODB_URI` peker riktig.
+API-et vil feile hvis det ikke får kontakt med MongoDB; sjekk at databasen kjører og at `MONGODB_URI` peker riktig. For eksempel vil det bli umulig å logge inn og ut hvis databasen ikke er på.
 
 ## Drift og feilsøking
 - Upload-katalog opprettes automatisk. Hver bruker får en mappe som er eposten sin.
 - Sjekk konsollen når du kjører `node app.js` for å se om serveren stopper eller error koder.
 
+## Sikkerhet
+- Autentisering: Per nå kun `x-user-email`-header fra frontend (ingen token/sesjon).
+- Passord: Hashes med bcrypt (`BCRYPT_ROUNDS`, default 10). Om du vil ha "bedre" kryptering så øk `BCRYPT_ROUNDS` til et høyere tall enn default.
+- Transport: Kjør bak HTTPS i produksjon slik at `x-user-email` og passord ikke går i klartekst.
+- Tilgang til filer: Hver forespørsel til filendepunkt må ha korrekt `x-user-email`; uten det returneres 401.
+- Opplasting: Multer lagrer på disk under `uploads/<brukers-epost>/`. Ingen server-side filtype/virus-sjekk enda.
+- Brute force: Ingen rate limiting/lockout foreløpig.
+- Logging: Konsoll-logger inneholder ikke passord, men kan inneholde feilmeldinger med detaljer.
 
 ## To Do List
 - Rate limiting og filtype/filstørrelse-validering server-side.
