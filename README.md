@@ -39,11 +39,6 @@ node app.js
 
 API-et vil feile hvis det ikke får kontakt med MongoDB; sjekk at databasen kjører og at `MONGODB_URI` peker riktig.
 
-## Frontend-notater
-- Hvis frontend hostes fra en annen port/domain kan `window.API_BASE_URL` settes i konsollen eller via `<script>` foer appens script lastes, f.eks. `window.API_BASE_URL = "http://localhost:3000";`.
-- `localStorage` noekkel: `clouddrop.userEmail` (settes etter login/registrering).
-- Ved manglende bruker videresender `script.js` til `login.html`.
-
 ## Drift og feilsøking
 - Upload-katalog opprettes automatisk. Hver bruker får en mappe som er eposten sin.
 - Sjekk konsollen når du kjører `node app.js` for å se om serveren stopper eller error koder.
