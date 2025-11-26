@@ -1,24 +1,47 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>| File Uploader |</title>
+    <title>CloudDrop | Home</title>
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
+    <main class="uploader">
+      <header class="uploader__header">
+        <div>
+          <p class="login-info">Logged in as: User</p>
+          <h1>CloudDrop</h1>
+          <p>Drag files here or click the button to browse.</p>
+        </div>
+        <button id="logoutBtn" class="secondary-button">Log out</button>
+      </header>
 
-    <div class="uploader-box">
+      <section class="dropzone">
+        <p class="dropzone__title">Drop files anywhere in this box (not working yet....)</p>
+        <p class="dropzone__subtitle">Supports single or multiple uploads. All filetypes accepted, except folders.</p>
+        <label for="fileInput" class="primary-button">Choose files</label>
+        <input type="file" id="fileInput" multiple />
+      </section>
 
-      <label for="fileInput" class="upload-label">Choose File</label>
-      <input type="file" id="fileInput" />
+      <button id="uploadBtn" class="upload-action">Upload selected files</button>
 
-      <button id="uploadBtn">Upload</button>
+      <div class="upload-progress" aria-label="Upload progress">
+        <div class="upload-progress__bar">
+          <div class="upload-progress__fill" id="uploadProgressFill" style="width: 0%"></div>
+        </div>
+        <div class="upload-progress__label" id="uploadProgressLabel">Waiting for your files...</div>
+      </div>
 
       <div id="status"></div>
       <div id="message"></div>
-    </div>
 
+      <section class="uploaded-files">
+        <h3>Uploaded files</h3>
+        <ul id="uploadedFiles"></ul>
+      </section>
+    </main>
+    <footer class="site-footer">Copyright CLOUDDROP ©</footer>
     <script src="../js/script.js"></script>
   </body>
 </html>

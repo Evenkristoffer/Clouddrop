@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudDrop | Login</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="auth-body">
+    <main class="auth-card">
+        <section class="auth-hero">
+            <p class="auth-pill">CloudDrop</p>
+            <h1>Welcome back</h1>
+            <p class="auth-subtitle">Sign in to organize uploads, track activity, and keep your files in sync.</p>
+            <ul class="auth-highlights">
+                <li>Secure storage and quick uploads</li>
+                <li>Link sharing with access controls</li>
+                <li>Realtime status on every file</li>
+            </ul>
+        </section>
+
+        <section class="auth-form">
+            <header>
+                <p class="login-info">Sign in</p>
+                <h2>Access your secure Drive</h2>
+            </header>
+            <p class="auth-feedback" id="authFeedback"></p>
+            <form>
+                <label class="field">
+                    <span>Email</span>
+                    <input type="email" name="email" placeholder="you@domain.com" required>
+                </label>
+                <label class="field">
+                    <span>Password</span>
+                    <input type="password" name="password" placeholder="********" required>
+                </label>
+                <div class="auth-options">
+                    <label class="remember">
+                        <input type="checkbox" name="remember"> Keep me signed in
+                    </label>
+                    <a href="#" class="auth-link">Forgot password?</a>
+                </div>
+                <button type="submit" class="primary-button">Log in</button>
+            </form>
+            <p class="auth-footer">Need an account? <a class="auth-link" href="register.html">Create one!</a></p>
+        </section>
+    </main>
+    <footer class="site-footer">Copyright CLOUDDROP ©</footer>
+    <script src="../js/auth.js"></script>
+</body>
+</html>
