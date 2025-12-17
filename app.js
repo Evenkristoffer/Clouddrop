@@ -56,22 +56,23 @@ const storage = multer.diskStorage({
     },
     filename: function (req, file, cb) {
         const unique = `${Date.now()}-${Math.round(Math.random() * 1e9)}`;
-        cb(null, `${unique}${path.extname(file.originalname)}`); // Append extension
+        cb(null, `${unique}${path.extname(file.originalname)}`);
     }
 });
 
 const upload = multer({ storage: storage });
 const frontendDir = path.join(__dirname, 'src');
+const mediaDir = path.join(__dirname, 'media');
 
 app.use(bodyParser.json());
 app.use(express.static(frontendDir)); 
+app.use('/media', express.static(mediaDir));
 
 async function hashPassword(password) {
     return bcrypt.hash(password, BCRYPT_ROUNDS);
 }
 
 async function passwordsMatch(password, storedHash) {
-    // If stored value is already bcrypt hash, compare; else fallback to direct match for legacy accounts.
     const looksHashed = typeof storedHash === 'string' && storedHash.startsWith('$2');
     if (looksHashed) {
         return bcrypt.compare(password, storedHash);
@@ -119,7 +120,7 @@ app.post('/api/login', async (req, res) => {
     try {
         const existingUser = await usersCollection.findOne({ email });
         if (!existingUser) {
-            return res.status(401).json({ error: 'Account not found' });
+            return res.status(401).json({ error: 'Invalid credentials' });
         }
 
         const ok = await passwordsMatch(password, existingUser.password);
@@ -147,7 +148,7 @@ app.post('/api/register', async (req, res) => {
     try {
         const existingUser = await usersCollection.findOne({ email });
         if (existingUser) {
-            return res.status(409).json({ error: 'Account already exists' });
+            return res.status(409).json({ error: 'Credentials are already in use' });
         }
 
         const passwordHash = await hashPassword(password);
