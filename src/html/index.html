@@ -18,13 +18,11 @@
       </header>
 
       <section class="dropzone">
-        <p class="dropzone__title">Drop files anywhere in this box (not working yet....)</p>
+        <p class="dropzone__title">Drop files anywhere in this box</p>
         <p class="dropzone__subtitle">Supports single or multiple uploads. All filetypes accepted, except folders.</p>
         <label for="fileInput" class="primary-button">Choose files</label>
         <input type="file" id="fileInput" multiple />
       </section>
-
-      <button id="uploadBtn" class="upload-action">Upload selected files</button>
 
       <div class="upload-progress" aria-label="Upload progress">
         <div class="upload-progress__bar">
@@ -41,7 +39,16 @@
         <ul id="uploadedFiles"></ul>
       </section>
     </main>
-    <footer class="site-footer">Copyright CLOUDDROP ©</footer>
+    <footer class="site-footer">
+      <span class="footer-copy">© CloudDrop</span>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="faq.html">FAQ</a>
+        <a href="terms-of-service.html">Terms of Service</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="user.html">Your account</a>
+      </nav>
+    </footer>
     <script src="../js/script.js"></script>
   </body>
 </html>

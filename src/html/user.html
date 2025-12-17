@@ -7,6 +7,61 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <footer class="site-footer">Copyright CLOUDDROP ©</footer>
+    <main class="content-page">
+        <header class="profile-header">
+            <div class="profile-avatar" aria-hidden="true">CloudDrop</div>
+            <div>
+                <p class="profile-label">Profile</p>
+                <h1 class="profile-name">Your Name</h1>
+                <p class="profile-subtitle">${userEmail}</p>
+            </div>
+        </header>
+
+
+        <section class="profile-section">
+            <h2>Account</h2>
+            <ul class="profile-list">
+                <li><strong>Email:</strong> ${userEmail}</li>
+                <li><strong>Member since:</strong> ${joindate}</li>
+                <li><strong>Status:</strong> Active</li>
+            </ul>
+        </section>
+
+        <section class="profile-section">
+            <h2>Storage</h2>
+            <ul class="profile-list">
+                <li><strong>Files uploaded:</strong> ${filesUploaded}</li>
+                <li><strong>Total size:</strong> ${drivesize}</li>
+                <li><strong>Last upload:</strong> ${lastupload}</li>
+            </ul>
+        </section>
+
+        <section class="profile-section">
+            <h2>Security</h2>
+            <ul class="profile-list">
+                <li><strong>2FA:</strong>${2FAStatus}</li>
+                <li><strong>Last login:</strong> 2024-01-15 09:12</li>
+            </ul>
+        </section>
+
+        <section class="profile-section">
+            <h2>Actions</h2>
+            <ul class="profile-list">
+                <li><a href="index.html">Back to files</a></li>
+                <li><a href="privacy-policy.html">Privacy settings</a></li>
+                <li><a href="terms-of-service.html">Terms of Service</a></li>
+            </ul>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <span class="footer-copy">© CloudDrop</span>
+        <nav class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="faq.html">FAQ</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="user.html">Your account</a>
+        </nav>
+    </footer>
 </body>
 </html>
