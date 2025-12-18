@@ -10,7 +10,6 @@ const bcrypt = require('bcrypt');
 const uploadDir = path.join(__dirname, 'uploads');
 
 console.log('Server is starting...');
-console.log('Om du ser dette burde jeg få høy måloppnåelse, eller lærlingplass :)');
 
 if (!fs.existsSync(uploadDir)) {
     fs.mkdirSync(uploadDir, { recursive: true });
